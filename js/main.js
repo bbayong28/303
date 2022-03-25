@@ -15,6 +15,9 @@ $(function () {
 
     /* $('.topBanner i').on('click',()=> $('topBanner').slideUp()); */
 
+    //*각각의 슬라이드에 애니메이션...
+    //////////////////////////////////////////////////////////////////
+
 
     $('.mainVisualSlide').on('inhit relnit afterChange', function () {
         let current = $('.slick-current');
@@ -40,6 +43,27 @@ $(function () {
     });
 
     이까지 하면 돌아가긴 하는데 슬라이더가 많아졌을때 번호를 찾느라 시간을 다보내게 됨 */
+
+
+
+
+    $('movieBtn i:first-child').on('click', function () {
+        $('#adMovie').trigger('play');
+    })
+    $('movieBtn i:last-child').on('click', function () {
+        $('#adMovie').trigger('pause');
+    })
+
+
+
+
+
+
+
+
+
+
+
 
 
 

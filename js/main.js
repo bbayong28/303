@@ -19,14 +19,20 @@ $(function () {
     //////////////////////////////////////////////////////////////////
 
 
-    $('.mainVisualSlide').on('inhit relnit afterChange', function (s, e, c) {
-        console.log(c);//1,2,0;
+    $('.mainVisualSlide').on('init relnit afterChange', function (e, s, c) {
+        // console.log(c); 1,2,0;
         $('mainVisualLink li').eq(c).addClass('on').siblings().removeClass('on');
         let current = $('.slick-current');
         current.addClass('on').siblings().removeClass('on');
 
-        $('.mainVisual .slideNum').text(c ? c + 1 : 1)
+        let num = c ? c + 1 : 1;
+        $('.mainVisual .slideNum').text(
+            "0" + num + "/0" + s.slideCount
+        )
+
     });
+
+
 
     $('.mainVisualSlide').slick({
         autoplay: true,
@@ -75,6 +81,56 @@ $(function () {
     });
 
 
+
+    $('#bgndVideo').YTPlayer({
+        videoURL: 'https://youtu.be/iTsj9xZS4q4',
+        containment: '.bgMovie',
+        autoPlay: true,
+        mute: true,
+        startAt: 0,
+        opacity: 1,
+        showControls: false,
+        playOnlyIfVisible: true,
+    });
+
+    $('uBtn i:first-child').on('click', function () {
+        $('#bgndVideo').YTPPlay();
+    });
+    $('uBtn i:last-child').on('click', function () {
+        $('#bgndVideo').YTPPause();
+    });
+
+    $('.productSlide').on('init relnit afterChange', function (e, s, c) {
+        let current = $('.slick-current');
+        current.addClass('on').siblings().removeClass('on');
+    });
+
+
+
+    $('.productSlide').slick({
+        slidesToShow: 5,
+        dots: true,
+        arrows: false,
+        centerMode: true,
+        autoPlay: true,
+
+    });
+
+
+    $('.productMain .slide_arrows i:first-child').on('click', function () {
+        $('.productSlide').slick('slickPrev');
+    });
+    $('.productMain .slide_arrows i:last-child').on('click', function () {
+        $('.productSlide').slick('slickNext');
+    });
+
+
+
+    $('.tabMenu li').on('click', function () {
+        let idx = $(this).index(); //0,1,2
+        $(this).addClass('on').siblings().removeClass('on');
+        $('.tabContent>div').eq(idx).addClass('on').siblings().removeClass('on');
+    })
 
 
 

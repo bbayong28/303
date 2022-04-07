@@ -4,32 +4,27 @@ $(function () {
 
     // { topBanner  2022.03.17 최종WOODY} 
     //$('css선택자').on('이벤트', 할일)
-
-
-    $('.topBanner i').on('click', topbannerHandler);
-
     function topbannerHandler() {
         $('.topBanner').slideUp();
     }
-    $('.topBanner i').on('click', topbannerHandler)
+
+    $('.topBanner i ').on('click', topbannerHandler);
 
     /* $('.topBanner i').on('click',()=> $('topBanner').slideUp()); */
 
     //*각각의 슬라이드에 애니메이션...
     //////////////////////////////////////////////////////////////////
 
-
-    $('.mainVisualSlide').on('init relnit afterChange', function (e, s, c) {
-        // console.log(c); 1,2,0;
-        $('mainVisualLink li').eq(c).addClass('on').siblings().removeClass('on');
+    $('.mainVisualSlide').on('init reInit afterChange', function (e, s, c) {
+        //console.log(s.slideCount, c); //1,2,0;
+        $('.mainVisualLink li').eq(c).addClass('on').siblings().removeClass('on')
         let current = $('.slick-current');
         current.addClass('on').siblings().removeClass('on');
 
         let num = c ? c + 1 : 1;
-        $('.mainVisual .slideNum').text(
+        $('.mainVisual  .slideNum').text(
             "0" + num + "/0" + s.slideCount
         )
-
     });
 
 
@@ -40,9 +35,9 @@ $(function () {
         arrows: false,
         pauseOnHover: false,/* 마우스 올리면 멈추는게 기본설정으로 되어있는데 멈추지않고돌아가게 하려면 false해야함 */
         pauseOnFocus: false,
-        /* dots: true, */
-        /* prevArrow: '<i class="xi-arrow-left s_left"></i>',
-        nextArrow: '<i class="xi-arrow-right s_right"></i>' */
+        //dots: true,
+        // prevArrow: '<i class="xi-arrow-left s_left"></i>',
+        // nextArrow: '<i class="xi-arrow-right s_right"></i>'
     });
 
 
@@ -54,7 +49,7 @@ $(function () {
     });
 
     $('.mainVisualLink li').on('click', function () {
-        let idx = $(this).index(); //0,1,2
+        let idx = $(this).index(); // 0,1,2
         $('.mainVisualSlide').slick('slickGoTo', idx);
     });
 
@@ -73,10 +68,10 @@ $(function () {
 
 
 
-    $('movieBtn i:first-child').on('click', function () {
+    $('.movieBtn i:first-child').on('click', function () {
         $('#adMovie').trigger('play');
     });
-    $('movieBtn i:last-child').on('click', function () {
+    $('.movieBtn i:last-child').on('click', function () {
         $('#adMovie').trigger('pause');
     });
 
@@ -93,27 +88,28 @@ $(function () {
         playOnlyIfVisible: true,
     });
 
-    $('uBtn i:first-child').on('click', function () {
+
+    $('.uBtn i:first-child').on('click', function () {
         $('#bgndVideo').YTPPlay();
     });
-    $('uBtn i:last-child').on('click', function () {
+
+    $('.uBtn i:last-child').on('click', function () {
         $('#bgndVideo').YTPPause();
     });
 
-    $('.productSlide').on('init relnit afterChange', function (e, s, c) {
+
+
+    $('.productSlide').on('init reInit afterChange', function (e, s, c) {
         let current = $('.slick-current');
         current.addClass('on').siblings().removeClass('on');
     });
-
-
 
     $('.productSlide').slick({
         slidesToShow: 5,
         dots: true,
         arrows: false,
         centerMode: true,
-        autoPlay: true,
-
+        autoplay: true,
     });
 
 
@@ -125,13 +121,24 @@ $(function () {
     });
 
 
+    $('.customerTab .tabMenu> li').on('click', function () {
+        //console.log($(this), $(this).index())//$(this)는 클릭한 자신$(this).index() 자신의 번호를 구하는 함수
+        /* let 이이름;
+        이이름 = $(this).index();
+        console.log(이이름) */
 
-    $('.tabMenu li').on('click', function () {
         let idx = $(this).index(); //0,1,2
-        $(this).addClass('on').siblings().removeClass('on');
-        $('.tabContent>div').eq(idx).addClass('on').siblings().removeClass('on');
-    })
+        const TAB_CON = $('.customerTab .tabContent>div')
 
+        /*TAB_CON.removeClass('on');        
+        TAB_CON.eq(idx).addClass('on')
+         상수쓸때 대문자로 쓰는게 예의 */
+
+        $('.customerTab .tabContent>div').eq(idx).addClass('on').siblings().removeClass('on');
+        $(this).addClass('on').siblings().removeClass('on');
+        $('.customerTab .right i').eq(idx).addClass('on').siblings().removeClass('on');
+
+    });
 
 
 

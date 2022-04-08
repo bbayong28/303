@@ -140,10 +140,26 @@ $(function () {
 
     });
 
+    $('#linkSite').on('change', function(){
+        let url = $(this).val();
+        /* console.log(url); */
+        window.open(url); //window 생략가능
+    });
 
 
+    $('.toTop').on('click', function(){
+        $('html, body').animate({scrollTop:0},1000)/* 1000이1초 400인 0.4초가 기본값 */
+    })
 
-
+    $(window).on('scroll',function(){
+        let sct = $(window).scrollTop();
+        console.log(sct)
+        if(sct > 700){
+            $('.toTop').fadeIn(2000)
+        }else{
+            $('.toTop').fadeOut()/* fadeIn,fadeout 대신 show, hidden하면 너무 딱딱하게 없어짐 */
+        }
+    })
 
     ///////////////////////////////////////////////////
 })

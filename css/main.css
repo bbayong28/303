@@ -1031,3 +1031,52 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
 .footerWrap address {
     font-style: normal;
 }
+
+.footerWrap .sns i{
+    font-size: 20px;
+    padding: 13px;
+    background: rgba(0,0,0,0.5);
+    margin: 0 0 0 3px;
+    border-radius: 50%;
+}
+
+#linkSite{
+    border: 1px solid #ddd;
+    outline: none;
+    background: #333;
+    color: #ddd;
+    padding:  5px 20px;
+    font-size: 13px;
+}
+
+.sun{
+    position: fixed;
+    top:50px;
+    right: 50px;
+    width: 100px;
+    animation:sunMove 1s infinite /* linear */ cubic-bezier(0.7, -0.45, 0.45, 1.51);
+}
+
+@keyframes sunMove{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.toTop{
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    z-index: 999;
+    display: none;
+
+}
+
+.toTop i{
+    font-size: 30px;
+    padding: 10px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+}

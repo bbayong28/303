@@ -38,8 +38,6 @@ nav>ul>li ul {
     width: 100%;
     background: #ff0;
     z-index: 999;
-    ;
-
 }
 
 /* 
@@ -56,11 +54,13 @@ nav>ul>li:hover ul {
     display: block;
 }
 
+
 /* 
 
 nav responsive
 
 */
+
 @media (max-width : 768px) {
     header h1 {
         text-align: left;

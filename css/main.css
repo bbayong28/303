@@ -39,7 +39,7 @@ body {
     border: 1px solid #333;
     font-size: 15px;
     font-weight: 300;
-    margin-left: 30px;
+    margin: 0 0 30px 0;
 }
 
 .topBanner i {
@@ -51,6 +51,62 @@ body {
     padding: 7px;
     border-radius: 50%;
     /* 원이 된다 */
+}
+
+@media (max-width:768px) {
+    .topBanner {
+        position: absolute;
+        inset: 50% auto auto 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        width: 80vw;
+        padding: 24px 0;
+        background: #f2f2f2;
+    }
+
+    .topBanner .container {
+        position: relative;
+        width: auto;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .topBanner h2 {
+        margin-bottom: 10px;
+        font-size: 4vw;
+        font-weight: 700;
+        letter-spacing: 0.040em;
+    }
+
+    .topBanner p {
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        line-height: 1.3;
+    }
+
+    .topBanner a {
+        display: block;
+        padding: 3px 30px;
+        border: 1px solid #333;
+        font-size: 15px;
+        font-weight: 300;
+        margin: 20px 0 0 0;
+        width: 140px;
+        text-align: center;
+    }
+
+    .topBanner i {
+        position: absolute;
+        top: auto;
+        bottom: -24px;
+        right: 0;
+        font-size: 20px;
+        background: #333;
+        color: #fff;
+        padding: 7px;
+        border-radius: 0;
+    }
 }
 
 .headerWrap {}
@@ -148,6 +204,160 @@ body {
     font-size: 17px;
     padding: 10px;
     border-radius: 50%;
+}
+
+.m__open {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .headerWrap h1 {
+        position: relative;
+        z-index: 1001;
+    }
+
+    .headerWrap .container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: auto;
+        line-height: 100px;
+    }
+
+
+    .headerWrap .container>* {
+        padding: 0 15px;
+    }
+
+    .headerWrap .gnb {
+        position: fixed;
+        inset: 0 auto auto 0;
+        z-index: 1000;
+        background: #fff;
+        width: calc(100% - 90px);
+        height: 100vh;
+        margin-left: 0;
+        line-height: 40px;
+        padding: 150px 30px 0 30px;
+        border-right: 1px solid #333;
+    }
+
+    .headerWrap .gnb>ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        color: #212529;
+    }
+
+    .headerWrap .gnb>ul>li {
+        position: relative;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .headerWrap .gnb>ul>li>a {
+        display: block;
+
+    }
+
+    .headerWrap .gnb>ul>li~li::before {
+        content: "";
+        position: absolute;
+        inset: 50% auto auto -25px;
+        display: none;
+        width: 1px;
+        height: 12px;
+        background: #212529;
+        transform: translateY(-50%);
+    }
+
+
+    .searchform .headerWrap .gnb>ul>li:first-child:before {
+        display: none;
+    }
+
+    #searchForm input[type="text"] {
+        color: #fd7e14;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #333;
+        padding: 3px 5px;
+    }
+
+    #searchForm input[type="text"]::placeholder {
+        color: #ddd;
+    }
+
+    #searchForm input[type="text"]:focus::placeholder {
+        color: transparent;
+    }
+
+    #searchForm button {
+        border: none;
+        background: transparent;
+    }
+
+    #searchForm button i {
+        color: #fff;
+        background: #333;
+        font-size: 17px;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    .m__open {
+        position: fixed;
+        inset: 30px 30px auto auto;
+        display: block;
+        width: 30px;
+        height: 30px;
+        /* 높이꼭필요 */
+        background: #dc3545;
+        border-radius: 0px;
+        z-index: 1001;
+    }
+
+    .m__open span {
+        position: absolute;
+        inset: 0 0 0 0;
+        height: 3px;
+        background: #fff;
+
+    }
+
+    .m__open span:nth-child(1) {
+        inset: 5px 5px 0 5px;
+    }
+
+    .m__open span:nth-child(2) {
+        inset: 13px 5px 0 5px;
+    }
+
+    .m__open span:nth-child(3) {
+        inset: 13px 5px 0 5px;
+    }
+
+    .m__open span:nth-child(4) {
+        inset: 21px 5px 0 5px;
+    }
+
+
+
+    .m__open.on span:nth-child(1) {
+        display: none;
+    }
+
+    .m__open.on span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+
+    .m__open.on span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+    .m__open.on span:nth-child(4) {
+        display: none;
+    }
+
 }
 
 /* 메인슬라이드 */
@@ -1030,4 +1240,11 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
 
 .footerWrap address {
     font-style: normal;
+}
+
+
+@media(max-width:768px) {
+    .sun {
+        display: none;
+    }
 }

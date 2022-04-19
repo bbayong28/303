@@ -231,7 +231,7 @@ body {
 
     .headerWrap .gnb {
         position: fixed;
-        inset: 0 auto auto 0;
+        inset: 0 auto auto -100%;
         z-index: 1000;
         background: #fff;
         width: calc(100% - 90px);
@@ -240,6 +240,12 @@ body {
         line-height: 40px;
         padding: 150px 30px 0 30px;
         border-right: 1px solid #333;
+        transition: 0.5s;
+    }
+
+    .headerWrap .gnb.on {
+        inset: 0 auto auto 0;
+
     }
 
     .headerWrap .gnb>ul {
@@ -321,6 +327,7 @@ body {
         inset: 0 0 0 0;
         height: 3px;
         background: #fff;
+        transition: 0.5s;
 
     }
 
@@ -341,9 +348,9 @@ body {
     }
 
 
-
     .m__open.on span:nth-child(1) {
-        display: none;
+        opacity: 0;
+        transform: translateX(200px);
     }
 
     .m__open.on span:nth-child(2) {
@@ -355,7 +362,8 @@ body {
     }
 
     .m__open.on span:nth-child(4) {
-        display: none;
+        opacity: 0;
+        transform: translateX(-200px);
     }
 
 }
@@ -456,7 +464,106 @@ body {
     inset: 50% auto auto 50%;
     transform: translate(-50%, -50%);
     width: 1200px;
-    height: 0 15px;
+    padding: 0 15px;
+}
+
+@media (max-width:768px) {
+
+    .mainVisual {
+        position: relative;
+    }
+
+    .mainVisual .mainVisualSlide figure {
+        position: relative;
+        height: calc(100vh - 100px);
+        color: #fff;
+        text-shadow: 0 0 3px #333;
+    }
+
+    .mainVisual .mainVisualSlide figure.itm02 {
+        color: #fff;
+        text-shadow: 0 0 3px #333;
+    }
+
+
+
+    .mainVisual .mainVisualSlide figure h2 {
+        font-size: 7vw;
+        font-weight: 900;
+        margin-bottom: 20px;
+
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    .mainVisual .mainVisualSlide figure.on h2 {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.5s;
+
+    }
+
+    .mainVisual .mainVisualSlide figure p {
+        font-size: 3.5vw;
+        font-weight: 300;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    .mainVisual .mainVisualSlide figure.on p {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.5s 0.5s;
+
+    }
+
+    .mainVisual .mainVisualSlide figure a {
+        display: inline-block;
+        padding: 5px 20px;
+        /* height: 30px;
+    line-height: 26px; 패딩말고 이렇게 해도됨*/
+        background: #333;
+        color: #fff;
+        text-align: center;
+        border: 1px solid #fff;
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+
+    .mainVisual .mainVisualSlide figure.on a {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.5s 1s;
+    }
+
+    .mainVisual .mainVisualSlide figure i {
+        vertical-align: middle;
+    }
+
+
+
+    .mainVisual .mainVisualSlide .itm01 {
+        background: url(../img/mainvisual01.jpg) no-repeat left center / cover;
+    }
+
+    .mainVisual .mainVisualSlide .itm02 {
+        background: url(../img/mainvisual02.jpg) no-repeat right center / cover;
+    }
+
+    .mainVisual .mainVisualSlide .itm03 {
+        background: url(../img/mainvisual03.jpg) no-repeat right center / cover;
+    }
+
+    .mainVisual .mainVisualSlide .slogan {
+        position: absolute;
+        inset: 50% auto auto 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 0 15px;
+        line-height: 1.35;
+    }
 }
 
 /*아주 중요하다고 했따..*/
@@ -516,6 +623,31 @@ body {
     right: 100px;
 }
 
+@media (max-width:768px) {
+    .mainVisual .slideArrows i[class*="s__"] {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+
+        padding: 5px;
+        font-size: 30px;
+        background: rgba(0, 0, 0, 0.1);
+        color: #fff;
+        border-radius: 0;
+
+    }
+
+    .mainVisual .slideArrows .s__left {
+        left: 0;
+    }
+
+    .mainVisual .slideArrows .s__right {
+        right: 0;
+    }
+
+}
+
 슬라이드 좌우 화살표 만드는 방법2
 /*  .mainVisual .mainVisualSlide .slick-dots{
      position: absolute;
@@ -573,6 +705,31 @@ body {
     background: #dc3545;
 
     position: relative;
+}
+
+@media (max-width:768px) {
+
+    .mainVisual .mainVisualLink {
+        position: absolute;
+        inset: auto auto 0 50%;
+        transform: translateX(-50%);
+
+        display: flex;
+        flex-direction: column;
+        width: 1200px;
+        padding: 0;
+        line-height: 30px;
+        text-align: center;
+        color: #fff;
+    }
+
+
+    .mainVisual .mainVisualLink li {
+        flex: 1;
+        background: #dc3545;
+
+        position: relative;
+    }
 }
 
 .mainVisual .mainVisualLink li::before {
@@ -674,6 +831,32 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     margin: 0 0 20px 0;
 }
 
+@media(max-width:768px) {
+
+    .contentWrap .container {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .contentWrap .container figure {
+        flex: 1;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .contentWrap .container figure .inner {
+        overflow: hidden;
+        border-radius: 0;
+        margin: 0 0 20px 0;
+    }
+
+}
+
+
+
 .contentWrap .container figure img {
     transition: 0.5s;
 }
@@ -706,6 +889,20 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     /*background-color background-image backkground-repeat background-position-x backgound-position-y / background-size*/
     filter: grayscale(0.75);
 }
+
+@media(max-width:768px) {
+    .eventBanner {
+        padding: 100px 0;
+        text-align: center;
+        color: #fff;
+        background: url(../img/mainvisual01.jpg) no-repeat scroll center center / cover;
+        /* 외위기 */
+        /* background-attachment:fixed;*/
+        /*background-color background-image backkground-repeat background-position-x backgound-position-y / background-size*/
+        filter: grayscale(0);
+    }
+}
+
 
 .eventBanner h2 {
     font-size: 19px;
@@ -747,6 +944,26 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     flex: 1;
     padding: 0 15px;
 }
+
+@media(max-width:768px) {
+    .adMovie .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .adMovie video {
+        width: 100%;
+    }
+
+    .adMovie .container>* {
+        flex: 1;
+        padding: 30px 15px;
+    }
+}
+
 
 .adMovie h2 {
     font-size: 19px;
@@ -857,6 +1074,22 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     padding: 0 15px;
 }
 
+@media(max-width:768px) {
+
+    .costomerService .container {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        margin: 0 auto;
+        gap: 30px;
+    }
+
+    .costomerService .container>div {
+        flex: 1;
+        padding: 0 15px;
+    }
+}
+
 .costomerService .container>div iframe {
     position: absolute;
     top: 0;
@@ -923,6 +1156,21 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     margin-bottom: 30px;
 }
 
+@media(max-width:768px) {
+    .productMain .container {
+        width: auto;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+
+    .productMain figure {
+        position: relative;
+        padding: 50px 15px;
+        margin-bottom: 30px;
+    }
+
+}
+
 .productMain figure.on strong {
     position: absolute;
     bottom: 100px;
@@ -983,6 +1231,31 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
 
 .productMain .slide_arrows i:last-child {
     margin-left: 700px;
+}
+
+@media(max-width:768px) {
+    productMain .slide_arrows i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(0, 0);
+        background: #dc3545;
+        color: #fff;
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 50%;
+    }
+
+    .productMain .slide_arrows i:first-child {
+        margin-left: 0;
+        left: 0;
+    }
+
+    .productMain .slide_arrows i:last-child {
+        margin-left: 0;
+        left: auto;
+        right: 0;
+    }
 }
 
 .productMain figure .inner {
@@ -1062,6 +1335,33 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     line-height: 20px;
 }
 
+@media(max-width:768px) {
+    .productMain .hit {
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0;
+        margin: 0 0 30px 0;
+        width: 0;
+        height: 0;
+        border-left: 40px solid #dc3545;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #dc3545;
+        border-top: 10px solid #dc3545;
+        color: #fff;
+        font-size: 13px;
+
+    }
+
+    .productMain .hit span {
+        position: absolute;
+        left: -30px;
+        top: -10px;
+        line-height: 20px;
+    }
+}
+
 .customerTab .tabMenu li {
     color: #333;
 }
@@ -1109,6 +1409,7 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     text-align: center;
 }
 
+
 .customerTab .tabMenu>li~li {
     border-left: 1px solid #fff;
 }
@@ -1116,6 +1417,71 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
 .customerTab .tabMenu>li a {
     display: block;
     padding: 0 20px;
+}
+
+.customerTab .tabContent ul span {
+    float: right;
+}
+
+.customerTab .tabContent ul a {
+    float: left;
+    width: 450px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media(max-width:768px) {
+
+    .customerTab .container {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        margin: 0 auto;
+        gap: 30px;
+    }
+
+    .customerTab .container>div {
+        flex: 1;
+        padding: 0 15px;
+    }
+
+    .customerTab .tabMenu {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .customerTab .tabMenu>li {
+        flex: 1;
+        line-height: 50px;
+        background: #ddd;
+        text-align: center;
+    }
+
+
+    .customerTab .tabMenu>li~li {
+        border-left: 1px solid #fff;
+        border-top: 2px soild #fff;
+    }
+
+    .customerTab .tabMenu>li a {
+        display: block;
+        padding: 0 20px;
+    }
+
+    .customerTab .tabContent ul span {
+        float: right;
+        width: 30%;
+    }
+
+    .customerTab .tabContent ul a {
+        float: left;
+        width: 60%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 }
 
 .customerTab .tabMenu>li.on {
@@ -1133,18 +1499,6 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     content: "";
     display: block;
     clear: both;
-}
-
-.customerTab .tabContent ul span {
-    float: right;
-}
-
-.customerTab .tabContent ul a {
-    float: left;
-    width: 450px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .customerTab .tabContent>div {
@@ -1242,9 +1596,67 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     font-style: normal;
 }
 
+@media(max-width:768px) {
+
+
+    .footerWrap {
+        background: #333;
+        color: #fff;
+        text-align: center;
+    }
+
+    .footerWrap .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: auto;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+
+    .footerWrap .container>* {
+        padding: 0 15px;
+    }
+
+    .footerWrap .top {
+        border-bottom: 1px solid #666;
+    }
+
+    .footerWrap .top ul {
+        display: block;
+    }
+
+    .footerWrap .top ul li {
+        display: inline-block;
+    }
+
+    .footerWrap .top ul li~li::before {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 13px;
+        background: #ddd;
+        margin: 0 10px;
+    }
+
+    .footerWrap address {
+        font-style: normal;
+    }
+}
 
 @media(max-width:768px) {
     .sun {
         display: none;
     }
+
+    .totop {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 999;
+        display: none;
+    }
+
+    .totop i {}
+
 }

@@ -627,29 +627,27 @@ body {
     .mainVisual .slideArrows i[class*="s__"] {
         position: absolute;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateY(-50%);
         z-index: 999;
 
         padding: 5px;
         font-size: 30px;
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 1);
         color: #fff;
         border-radius: 0;
-
     }
 
     .mainVisual .slideArrows .s__left {
-        left: 0;
+        left: 0
     }
 
     .mainVisual .slideArrows .s__right {
         right: 0;
     }
-
 }
 
-슬라이드 좌우 화살표 만드는 방법2
-/*  .mainVisual .mainVisualSlide .slick-dots{
+/*슬라이드 좌우 화살표 만드는 방법2
+  .mainVisual .mainVisualSlide .slick-dots{
      position: absolute;
      bottom:100px;
      left: 50%;
@@ -686,7 +684,7 @@ body {
  }
  */
 
-.mainVisual .mainVisualLink {
+ .mainVisual .mainVisualLink {
     position: absolute;
     inset: auto auto 0 50%;
     transform: translateX(-50%);
@@ -699,7 +697,6 @@ body {
     color: #fff;
 }
 
-
 .mainVisual .mainVisualLink li {
     flex: 1;
     background: #dc3545;
@@ -708,7 +705,6 @@ body {
 }
 
 @media (max-width:768px) {
-
     .mainVisual .mainVisualLink {
         position: absolute;
         inset: auto auto 0 50%;
@@ -716,13 +712,13 @@ body {
 
         display: flex;
         flex-direction: column;
-        width: 1200px;
-        padding: 0;
+        width: 100%;
+        padding: 0 0;
         line-height: 30px;
         text-align: center;
         color: #fff;
-    }
 
+    }
 
     .mainVisual .mainVisualLink li {
         flex: 1;
@@ -748,7 +744,7 @@ body {
     transition: 3s;
 }
 
-.mainVisual .mainVisualLink li {
+.mainVisual .mainVisualLink li a{
     position: relative;
 }
 
@@ -1156,7 +1152,7 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     margin-bottom: 30px;
 }
 
-@media(max-width:768px) {
+@media (max-width:768px) {
     .productMain .container {
         width: auto;
         padding: 0 15px;
@@ -1168,7 +1164,6 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
         padding: 50px 15px;
         margin-bottom: 30px;
     }
-
 }
 
 .productMain figure.on strong {
@@ -1177,7 +1172,7 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     left: 50%;
     width: 90%;
     text-align: center;
-    padding: 5px 0px;
+    padding: 5px 0;
     border: 5px solid rgba(0, 0, 0, 0.1);
     transform: translateX(-50%);
     z-index: 999;
@@ -1232,9 +1227,30 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
 .productMain .slide_arrows i:last-child {
     margin-left: 700px;
 }
+.productMain .hit {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    margin-left: 280px;
+    width: 0;
+    height: 0;
+    border-left: 40px solid #dc3545;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #dc3545;
+    border-top: 10px solid #dc3545;
+    color: #fff;
+    font-size: 13px;
+}
 
-@media(max-width:768px) {
-    productMain .slide_arrows i {
+.productMain .hit span {
+    position: absolute;
+    left: -30px;
+    top: -10px;
+    line-height: 20px;
+}
+
+@media (max-width:768px) {
+    .productMain .slide_arrows i {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -1255,6 +1271,30 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
         margin-left: 0;
         left: auto;
         right: 0;
+    }
+
+    .productMain .hit {
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0;
+        margin: 0 0 30px 0;
+        width: 0;
+        height: 0;
+        border-left: 40px solid #dc3545;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #dc3545;
+        border-top: 10px solid #dc3545;
+        color: #fff;
+        font-size: 13px;
+    }
+
+    .productMain .hit span {
+        position: absolute;
+        left: -30px;
+        top: -10px;
+        line-height: 20px;
     }
 }
 
@@ -1312,56 +1352,10 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     transition: 0.5s;
 }
 
-.productMain .hit {
-    position: absolute;
-    top: 90px;
-    left: 50%;
-    margin-left: 280px;
-    width: 0;
-    height: 0;
-    border-left: 40px solid #dc3545;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #dc3545;
-    border-top: 10px solid #dc3545;
-    color: #fff;
-    font-size: 13px;
 
-}
 
-.productMain .hit span {
-    position: absolute;
-    left: -30px;
-    top: -10px;
-    line-height: 20px;
-}
 
-@media(max-width:768px) {
-    .productMain .hit {
-        position: relative;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-left: 0;
-        margin: 0 0 30px 0;
-        width: 0;
-        height: 0;
-        border-left: 40px solid #dc3545;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid #dc3545;
-        border-top: 10px solid #dc3545;
-        color: #fff;
-        font-size: 13px;
-
-    }
-
-    .productMain .hit span {
-        position: absolute;
-        left: -30px;
-        top: -10px;
-        line-height: 20px;
-    }
-}
-
+/*
 .customerTab .tabMenu li {
     color: #333;
 }
@@ -1375,12 +1369,12 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
 
 }
 
-.customerTab .tabContent>div.on
-
-/* on_active써도됨 active는 쓸수 없음 홈페이지 에러남*/
-    {
+.customerTab .tabContent>div.on{
     display: block;
 }
+
+ //on_active써도됨 active는 쓸수 없음 홈페이지 에러남
+}*/
 
 .customerTab {
     padding: 100px 0;
@@ -1485,13 +1479,13 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
 }
 
 .customerTab .tabMenu>li.on {
-    background: hotpink;
+    background: #dc3545;
     color: #fff;
 }
 
 
 .customerTab .tabContent ul li {
-    line-height: 35px;
+    line-height: 40px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -1500,6 +1494,9 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     display: block;
     clear: both;
 }
+
+
+
 
 .customerTab .tabContent>div {
     display: none;
@@ -1596,8 +1593,15 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     font-style: normal;
 }
 
-@media(max-width:768px) {
+.footerWrap .sns i {
+    font-size: 20px;
+    padding: 13px;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0 0 0 3px;
+    border-radius: 50%;
+}
 
+@media(max-width:768px) {
 
     .footerWrap {
         background: #333;
@@ -1642,14 +1646,60 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
     .footerWrap address {
         font-style: normal;
     }
+
+    .footerWrap .sns i {
+        font-size: 20px;
+        padding: 13px;
+        background: rgba(0, 0, 0, 0.5);
+        margin: 0 0 0 3px;
+        border-radius: 50%;
+    }
 }
 
-@media(max-width:768px) {
-    .sun {
-        display: none;
-    }
+#linkSite {
+    border: none;
+    outline: none;
+    background: #333;
+    color: #ddd;
+    border: 1px solid #ddd;
+    padding: 5px 20px;
+    font-size: 13px;
+}
 
-    .totop {
+.sun {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 100px;
+    animation: sunMove 1s infinite cubic-bezier(0.7, -0.48, 0.48, 1.51);
+}
+
+@keyframes sunMove {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.toTop {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    z-index: 999;
+    display: none;
+}
+
+.toTop i {
+    font-size: 30px;
+    padding: 10px;
+    background: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+@media (max-width:768px) {
+    .toTop {
         position: fixed;
         bottom: 0;
         right: 0;
@@ -1657,6 +1707,15 @@ block- 나타나라 , 블록속성을 가져라, 박스를 만들어라 여기�
         display: none;
     }
 
-    .totop i {}
+    .toTop i {
+        font-size: 20px;
+        padding: 5px;
+        background: #ff0;
+        border-radius: 0;
+        cursor: pointer;
+    }
 
+    .sun {
+        display: none;
+    }
 }

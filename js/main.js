@@ -148,6 +148,27 @@ $(function () {
 
     });
 
+    $('#linkSite').on('change', function () {
+        let url = $(this).val();
+        if (url) window.open(url);
+    });
+
+
+    $('.toTop').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, 1000)
+    });
+
+
+    $(window).on('scroll', function () {
+        let sct = $(window).scrollTop();
+        console.log(sct);
+        if (sct > 600) {
+            $('.toTop').fadeIn(2000)
+        } else {
+            $('.toTop').fadeOut(2000)
+        }
+    });
+
     //$('.m__open').addClass('on')
     //let MOPEN = document.querySelectorAll('.m__open');
     //MOPEN.addEventListener('click', e => {

@@ -33,6 +33,7 @@ $(function () {
         autoplay: true,
         autoplaySpeed: 3000,
         arrows: false,
+        useTransform: false,/* slick깜빡임 오류 잡아줌 !!!!!!!!!!!!!!!! */
         pauseOnHover: false,/* 마우스 올리면 멈추는게 기본설정으로 되어있는데 멈추지않고돌아가게 하려면 false해야함 */
         pauseOnFocus: false,
         //dots: true,
